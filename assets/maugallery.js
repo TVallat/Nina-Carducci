@@ -120,7 +120,7 @@
       $(`#${lightboxId}`).modal("toggle");
     },
     prevImage() {
-      const activeTag = $(".tags-bar span.active-tag").data("images-toggle");
+      const activeTag = $(".tags-bar span.active").data("images-toggle");
       const activeImageSrc = $(".lightboxImage").attr("src");
       const imagesCollection = [];
 
@@ -152,7 +152,7 @@
       }
     },
     nextImage() {
-      const activeTag = $(".tags-bar span.active-tag").data("images-toggle");
+      const activeTag = $(".tags-bar span.active").data("images-toggle");
       const activeImageSrc = $(".lightboxImage").attr("src");
       const imagesCollection = [];
 
@@ -207,9 +207,9 @@
     },
     showItemTags(gallery, position, tags) {
       var tagItems =
-        '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all">Tous</span></li>';
+        '<li class="nav-item"><span class="nav-link active"  data-images-toggle="all">Tous</span></li>';
       $.each(tags, function(index, value) {
-        tagItems += `<li class="nav-item active">
+        tagItems += `<li class="nav-item">
                 <span class="nav-link"  data-images-toggle="${value}">${value}</span></li>`;
       });
       var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
@@ -223,11 +223,11 @@
       }
     },
     filterByTag() {
-      if ($(this).hasClass("active-tag")) {
+      if ($(this).hasClass("active")) {
         return;
       }
-      $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+      $(".nav-link.active").removeClass("active");
+      $(this).addClass("active");
 
       var tag = $(this).data("images-toggle");
 
