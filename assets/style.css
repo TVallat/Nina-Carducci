@@ -39,6 +39,10 @@ body {
 	color: #000
 }
 
+.nav a:hover {
+	color: #605A24;
+}
+
 .social-link img {
 	width: 20px;
 }
@@ -116,6 +120,10 @@ h2 {
 
 .nav-pills .nav-link {
 	color: #000
+}
+
+.nav-link:hover {
+	cursor: pointer;
 }
 
 .item-column {
